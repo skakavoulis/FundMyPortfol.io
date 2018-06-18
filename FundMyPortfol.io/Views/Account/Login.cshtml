@@ -1,0 +1,42 @@
+﻿@model IEnumerable<FundMyPortfol.io.Models.User>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Log In</h2>
+
+<form enctype="application/x-www-form-urlencoded" class="form-horizontal m-t-20"
+      action="/Account/Login"
+      method="post"
+      name="loginForm"
+      id="loginForm">
+
+    <div class="form-group">
+        <div class="col-md-4" style="margin-bottom: 12px;">
+            <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                <input class="form-control" type="text" required="required" name="Email" id="Email"
+                       value="" placeholder="Email" maxlength="30" />
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-4">
+            <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                <input class="form-control" type="password" required="required" name="Password" id="Password"
+                       value="" placeholder="Password" maxlength="30" />
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group text-right">
+        <div class="col-md-4"> <button class="buttonStyle waves-effect waves-red" type="submit">Login</button></div>
+    </div>
+
+    <p>
+        <a href="~/Account/SignUp">Sign Up</a>
+    </p>
+</form>

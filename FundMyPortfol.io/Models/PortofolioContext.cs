@@ -24,9 +24,9 @@ namespace FundMyPortfol.io.Models
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            if (!optionsBuilder.IsConfigured)
+            if(!optionsBuilder.IsConfigured)
             {
-//#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
+                //#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
                 optionsBuilder.UseSqlServer("Server=localhost\\SQLEXPRESS;Database=Portofolio;Trusted_Connection=True;");
             }
         }
@@ -35,7 +35,7 @@ namespace FundMyPortfol.io.Models
         {
             modelBuilder.Entity<BackerBuyPackage>(entity =>
             {
-                entity.HasKey(e => new { e.Backer, e.Package });
+                entity.HasKey(e => new { e.Backer,e.Package });
 
                 entity.HasOne(d => d.BackerNavigation)
                     .WithMany(p => p.BackerBuyPackage)
@@ -52,7 +52,7 @@ namespace FundMyPortfol.io.Models
 
             modelBuilder.Entity<BackerFollowCreator>(entity =>
             {
-                entity.HasKey(e => new { e.Backer, e.ProjectCreator });
+                entity.HasKey(e => new { e.Backer,e.ProjectCreator });
 
                 entity.HasOne(d => d.BackerNavigation)
                     .WithMany(p => p.BackerFollowCreatorBackerNavigation)
